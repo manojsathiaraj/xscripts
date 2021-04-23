@@ -1,0 +1,21 @@
+# gpg -c <filename>
+enter passphrase:
+renter passphrase:
+<filename>.gpg
+
+using vim-gnugpg plugin we can edit the gpg file without making a copy of deceypted file also it wil disable viminfo and swp file
+
+# mkdir $HOME/.vim/pack/gnupg/start/
+# git clone https://github.com/jamessan/vim-gnupg.git
+# cd $HOME/.vim/pack/gnupg/start/vim-gnupg
+# chmod +x autoload/gnupg.vim
+# chmod +x plugin/gnupg.vim
+ 
+append .bashrc
+	GPG_TTY=`tty`
+	export GPG_TTY
+
+restart terminal 
+vim <filename>.gpg
+
+prompt will pop-up asking passphrase after the file is decrypted in vim editor you can make changes next :w and enter passphrase to save
