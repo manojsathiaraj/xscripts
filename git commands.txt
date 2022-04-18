@@ -68,8 +68,3 @@ EE Code 727DQ7JGQ
 Group: A_group 157
 Bitbucket Repo : A_group-157
 Group Members: 
-Innocent Ayodele
-Purvaj Reddy Puttareddy
-Mayank Sagar
-Manoj Sathiaraj
-Tolani Halimat Yoosuf
