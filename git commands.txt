@@ -1,0 +1,75 @@
+git config --global --unset-all user.name
+git clone <link>
+cd <cloned_dir>
+make changes
+git status
+git add/rm <file_name>
+git commit -m "message/comment"
+git pull origin master
+git push origin master
+git log
+
+To check the difference against the remote
+git diff origin/master
+
+To have a synthetic view of what's going on "origin"
+git remote show origin
+
+to create and delete banch
+git branch <new_branch_name>
+git branch -D <branch_name_to_delete>
+
+to switch/navigate btw master to branch & viseversa.
+git checkout <branch_name>
+git checkout master
+git checkout -f BRANCH-NAME	  ;##Force a Checkout, used to throw away local changes. Git will ignore unmerged entries.
+
+
+To revet back a particular commit by removing commit history
+	git log --oneline --graph --decorate
+	git reset  --hard <commit_id>
+	git push --force origin master
+
+undo changes you’ve made to a file in your working directory
+git checkout -- FILE-NAME	 ;## revert the file back to the version in HEAD
+and git add ; git commit
+
+to remove file in git used
+git rm <file_name>
+git commit
+git push origin <branch/master>
+
+
+To view history of changes made to the specific file
+git log <file_name>
+
+to forget password in git
+git config --global --unset credential.helper
+git config --system --unset credential.helper
+
+To save the password in git
+git config --global credential.helper cache  ;## following command does not work in windows
+git config --global credential.helper store  ;## this works in windows but It saves the credentials in plain text.
+
+To list git configurations 
+git config -l
+git config -l --show-origin  ;## to list git configurations along with origin files.
+
+
+
+yWVTFqGmG7KuXdXurxDJ
+
+
+5LTSULRUW91OU696GWKZVZ4
+
+EE Code 727DQ7JGQ
+
+
+Group: A_group 157
+Bitbucket Repo : A_group-157
+Group Members: 
+Innocent Ayodele
+Purvaj Reddy Puttareddy
+Mayank Sagar
+Manoj Sathiaraj
+Tolani Halimat Yoosuf
