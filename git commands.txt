@@ -55,16 +55,3 @@ To list git configurations
 git config -l
 git config -l --show-origin  ;## to list git configurations along with origin files.
 
-
-
-yWVTFqGmG7KuXdXurxDJ
-
-
-5LTSULRUW91OU696GWKZVZ4
-
-EE Code 727DQ7JGQ
-
-
-Group: A_group 157
-Bitbucket Repo : A_group-157
-Group Members: 
