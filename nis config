@@ -1,0 +1,82 @@
+NIS SERVER CONFIGURATION
+1.	NIS Server Packages:
+ypserv
+yp-tools
+ypbind
+ypxfrd
+rpcbind
+nfs
+xinetd
+2.	NIS Daemons
+ypserv
+rpcbind
+Portmap
+nfs
+ypxfrd
+
+yppasswdd
+
+ypbind
+xinetd	(Main NIS server daemon)
+(from RHEL/CENTOS 6)
+(upto RHEL/CENTOS 5)
+
+(Used to speed up the transfer of very large NIS maps)
+(Lets users change their passwords on the NIS server from NIS clients)
+(Main NIS server daemon)
+(Bind specific services to specific IP on host machine)
+Add NIS Domain 
+# vi /etc/sysconfig/network
+NISDOMAIN="<nis-doamin>"
+Add Domian NIS client Configuration file
+	# vi /etc/yp.conf 
+ypserver 127.0.0.1
+domain <nis-domain> server <server-hostname>
+Start And Enable Following Daemons
+# /etc/init.d/rpcbind start
+# /etc/init.d/yppasswdd start
+# /etc/init.d/ypserv start
+# chkconfig portmap on
+# chkconfig yppasswdd on
+# chkconfig ypserv on
+#rpcinfo -p localhost	(to check the service is running or not)
+Initialize NIS Domain
+# /usr/lib64/yp/ypinit  -m
+        next host to add:  <server-hostname>
+       next host to add: <ctrl+D>
+Adding NIS Users
+Add users using useradd command
+# cd /var/yp
+yp]# make
+# ypcat passwd
+Start ypbind, ypxfrd, xinetd servicesRestart All Daemons Related to NIS
+# for service in ypserv rpcbind ypxfrd xinetd nfs ypbind 
+		>do /etc/init.d/$service restart
+		>done
+NIS Client Configuration:
+NIS Client Packages:
+yp-tools
+ypbind
+rpcbind
+Configure NIS Files Using authconfig-tui
+	# authconfig-tui	(Enter <nis-domain> & <nis-ip-address> when prompted)
+Add NIS Domain 
+# vi /etc/sysconfig/network
+ 	NISDOMAIN="<nis-doamin>"
+Add Domian NIS client Configuration file
+# vi /etc/yp.conf 
+ 	domain <nis-domain> server <server-hostname>
+
+Check /etc/nsswitch.conf Entry To Match The Order
+# vi /etc/nsswitch.conf
+ 	passwd:	files nis
+ 	shadow:	files nis
+ 	group:	files nis
+Start And Enable ypbind, rpcbind Daemons
+# service ypbind start
+# service rpcbind start
+Verify NIS User Access To The NIS Server
+# ypcat passwd
+# ypmatch <nis-user> passwd
+# su - <nis-user>
+
