@@ -1,0 +1,30 @@
+Basic HTTPD with User Authentication Configuration:
+ 	Methods To Configure Basic Web Server:
+1.	Install httpd package,
+# yum install httpd
+2.	Create and modify index.html file in the document root directory, #cd /var/www/html/index.html
+3.	Edit the httpd configuration file 					
+#vim /etc/httpd/conf/httpd.conf
+
+<virtualhost <ip_address>:80>
+ServerName linuxtest.riskspan.com
+DocumentRoot /var/www/html
+customlog /var/log/httpd/httpd_logs common
+</virtualhost>
+
+4.	Check the Syntax using 							httpd -t
+5.	Restart the httpd service							/etc/init.d/httpd restart
+6.	Check the web server is correctly configured with your servername and ip address with browser or curl command.	curl linuxtest.riskspan.com
+Methods To Configure User Authentication:
+1.	Install mod_auth_basic package
+# yum install mod_basic_auth
+2.	Create user and the file name name should be .htpasswd
+# htpasswd -c /etc/httpd/conf/.htpasswd <username>	  enter password:								Adding user.
+3.	Edit the httpd configuration file 					#vim /etc/httpd/conf/httpd.conf			<directory /var/www/html/>				AuthType Basic							AuthName "Basic Authentication"			AuthUserFile /etc/httpd/conf/.htpasswd			require user manoj						</directory>
+4.	Check the Syntax using
+# httpd -t
+5.	Restart the httpd service	
+# /etc/init.d/httpd restart
+6.	Check the web server is correctly configured with your servername and ip address with browser or curl command.
+# curl linuxtest.riskspan.com
+7.	When prompted for Username and Password enter the credentials to view the web content.
