@@ -1,0 +1,21 @@
+Export Home Directory From Server Machine
+ 	# vim /etc/exports
+		/home 		*(rw,sync)
+`	# exportfs -r
+	# /etc/init.d/rpcbind start
+	# /etc/init.d/nfs start
+	# showmount -e
+In Client Machine
+ 	# yum install autofs
+	# mv /home /home.bak
+	# mkdir /home
+	# ls -ld /home*
+	# vim /etc/auto.master
+		/home		/etc/auto.home
+
+	#vim /etc/auto.home
+		*	-fstype=nfs,soft,intr		<server-ip> :/home/&
+
+	# /etc/init.d autofs start
+	# chkconfig autofs on
+
