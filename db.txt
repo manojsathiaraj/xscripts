@@ -1,0 +1,39 @@
+TYPES OF DB:
+
+A.	Centralised database
+B.	Distributed database
+C.	Personal database
+D.	End-user database
+E.	Commercial database
+F.	NoSQL database
+G.	Operational database
+H.	Relational database
+I.	Cloud database
+J.	Object-oriented database
+K.	Graph database
+
+MYSQL PRIVILEGES:
+
+●	ALL PRIVILEGES – grants all privileges to the MySQL user
+●	CREATE – allows the user to create databases and tables
+●	DROP - allows the user to drop databases and tables
+●	DELETE - allows the user to delete rows from specific MySQL table
+●	INSERT - allows the user to insert rows into specific MySQL table
+●	SELECT – allows the user to read the database
+●	UPDATE - allows the user to update table rows
+To Revoke All Privileges From User :
+	REVOKE ALL PRIVILEGES, GRANT OPTION FROM '<user>'@'%';
+To Grant Privileges To User :
+	GRANT UPDATE,SELECT ON <db>.* to <user>'@'%';
+	GRANT ALL ON <db>.* to <user>'@'%';
+To Create Table :
+CREATE TABLE   <table name> (<field1> INT (3), <filed2> \ VARCHAR(30));
+To Insert Value Into The Table :
+	INSERT INTO <TABLE_NAME> VALUES ('000', 'ENTER YOUR DATA');
+To View The Tables :
+	SHOW TABLES;
+To View Grant Privileges To User :
+	SHOW GRANTS FOR '<user>'@'%';
+To View Users Available :
+	SELECT user, host from mysql.user;
+
