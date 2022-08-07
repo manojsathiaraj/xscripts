@@ -1,0 +1,13 @@
+SSH Login with Private Key :
+Permissions are most important:
+~/.ssh – 700
+~/.ssh/authorized_keys – 600
+~/.ssh/id_rsa - 600
+Methods To be followed on Server Machine:
+1.	Use  ssh-keygen -t rsa command to generate key pair
+2.	Copy the public key to a new file  in ~/.ssh/authorized_keys
+3.	Set the file permission for ~/.ssh/authorized_keys to 600
+	Methods To be followed on Host Machine:
+1.	Get the private key file from the server 				scp <user>@<localhost>:/<path>/<file> .
+2.	Run the command, ssh -i <private-key> <user>@<localhost>
+3.	Enter the passphrase to login to the server machine
