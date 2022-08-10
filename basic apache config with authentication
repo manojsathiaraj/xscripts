@@ -26,5 +26,5 @@ Methods To Configure User Authentication:
 5.	Restart the httpd service	
 # /etc/init.d/httpd restart
 6.	Check the web server is correctly configured with your servername and ip address with browser or curl command.
-# curl linuxtest.riskspan.com
+# curl linuxtest.*******.com
 7.	When prompted for Username and Password enter the credentials to view the web content.
