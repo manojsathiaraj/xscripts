@@ -7,7 +7,7 @@ Basic HTTPD with User Authentication Configuration:
 #vim /etc/httpd/conf/httpd.conf
 
 <virtualhost <ip_address>:80>
-ServerName linuxtest.riskspan.com
+ServerName linuxtest.*******.co
 DocumentRoot /var/www/html
 customlog /var/log/httpd/httpd_logs common
 </virtualhost>
