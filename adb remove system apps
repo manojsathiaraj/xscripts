@@ -1,0 +1,43 @@
+To remove system apps from Android Phone
+Android setup:
+1. enable developer Mode in android phone by tapping multiple time on build version (settings-> AboutPhone -> Version/Build Version)
+2. Locate "DeveloperOptions" in your android mostly under (Settings -> "Additional Settings"/"Systems&Update"/"AboutPhone" -> "DeveloperOptions")
+3. Enable DeveloperOptions and USB Debugging
+PC setup:
+1. Install adb drivers (not required if you have android studio installed)
+2. Set the path variable in windows to point adb driver location
+3. then run the following commands in cmd & PowerShell
+
+To list/View Available Android devices connected with USB Debugging
+adb devices
+To Enter adb shell and execute become
+adb shell
+To list available commands
+pm help
+To list system packages
+pm list packages -s 
+<!!-CAUTION-!!> To uninstall package
+pm uninstall -k --user 0 <package>
+eg.: pm uninstall -k --user 0 com.facebook.services
+
+Example <package> name removed
+common - apps <package>
+Facebook services:
+com.facebook.services
+com.facebook.system
+com.facebook.appmanager
+Google Movies - com.google.android.videos
+
+oppo , realme <package>
+Browser 		com.heytap.browser 
+Hey Tap Cloud 	com.heytap.cloud
+GameSpace 		com.coloros.gamespace
+-				com.nearme.atlas
+
+miui <package>
+Mi Pay		com.mipay.wallet.id
+Mi Pay		com.mipay.wallet.in
+Mi Drop		com.xiaomi.midrop
+Mi Payment	com.xiaomi.payment
+Mi Video	com.miui.videoplayer
+Browser		com.android.browser
